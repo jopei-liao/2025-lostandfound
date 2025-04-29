@@ -1,0 +1,17 @@
+@import "../../assets/sass/_mixin.sass"
+
+section
+	.img-box
+		ul
+			width: 100%
+			display: flex
+			margin-bottom: 2em
+			@include screen(768px)
+				margin-bottom: 1em
+			li
+				flex-shrink: 0
+				width: clamp(12.5em, 20vw, 800px)
+				margin: 0 .5em
+				@include screen(768px)
+					width: clamp(10em, 20vw, 800px)
+					margin: 0 .25em

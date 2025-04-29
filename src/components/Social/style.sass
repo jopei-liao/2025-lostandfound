@@ -1,0 +1,45 @@
+
+@import "../../assets/sass/_mixin.sass"
+
+section
+	.social-box
+		height: 100%
+		display: flex
+		justify-content: center
+		flex-direction: column
+		align-items: center
+		flex-wrap: wrap
+		text-align: center
+		box-sizing: border-box
+		position: relative
+		@include screen(768px)
+			padding-bottom: 10vh
+		h2.title
+			color: #fff
+			font-size: 2em
+			width: 100%
+			line-height: 1.5
+			font-weight: bold
+			letter-spacing: .01em
+			margin-bottom: 1em
+			br
+				display: none
+				@include screen(768px)
+					display: block
+		p
+			color: #fff
+			font-size: 1.5em
+			line-height: 1.7
+			width: 100%
+			@include screen(768px)
+				font-size: 1em
+			a
+				color: #fff
+				display: inline-block
+				text-decoration: underline
+				margin: 0 .25em
+		.qrcode
+			width: 8em
+			margin-top: 1em
+			margin-bottom: 2em
+			position: relative
