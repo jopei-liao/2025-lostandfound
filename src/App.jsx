@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import imagesLoaded from "imagesloaded";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import axios from "axios";
 
 import Loading from "./components/Loading";
 import Info from "./components/Info";
@@ -43,6 +43,13 @@ function App() {
 			clearTimeout(isEndTimerRef.current);
 			clearTimeout(hideLoadingTimerRef.current);
 		};
+	}, []);
+
+	useEffect(() => {
+		let params = {
+			time: new Date().toLocaleString("zh-TW"),
+		};
+		axios.get("https://script.google.com/macros/s/AKfycbzgTl5YJKJjzl_dA72Hb-MaBwAe-_15NsVreoJ89Ql2Z8Ql2nVDlGsrKSBUbMNHkgH1mA/exec", { params });
 	}, []);
 
 	return (
