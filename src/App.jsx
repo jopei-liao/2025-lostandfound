@@ -33,6 +33,7 @@ function App() {
 			setIsEnd(true);
 		}, 2000);
 		hideLoadingTimerRef.current = setTimeout(() => {
+			document.documentElement.classList.remove("lock");
 			setIsShowLoading(false);
 		}, 6000);
 	};
@@ -49,7 +50,9 @@ function App() {
 		let params = {
 			time: new Date().toLocaleString("zh-TW"),
 		};
-		axios.get("https://script.google.com/macros/s/AKfycbzgTl5YJKJjzl_dA72Hb-MaBwAe-_15NsVreoJ89Ql2Z8Ql2nVDlGsrKSBUbMNHkgH1mA/exec", { params });
+		if (import.meta.env.MODE === "production") {
+			axios.get("https://script.google.com/macros/s/AKfycbzgTl5YJKJjzl_dA72Hb-MaBwAe-_15NsVreoJ89Ql2Z8Ql2nVDlGsrKSBUbMNHkgH1mA/exec", { params });
+		}
 	}, []);
 
 	return (

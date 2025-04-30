@@ -33,7 +33,7 @@ section
 				@include screen(768px)
 					display: inline-block
 					width: 100%
-	.scroll-downs
+	.scroll-down.pc
 		position: absolute
 		right: 50%
 		left: 50%
@@ -42,7 +42,7 @@ section
 		width: 1.85em
 		height: 2.75em
 		@include screen(768px)
-			transform: translateX(-50%) scale(.65)
+			display: none
 		.mousey
 			width: .15em
 			padding: .5em .75em
@@ -60,3 +60,42 @@ section
 			animation-duration: 2s
 			animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94)
 			animation-iteration-count: infinite
+	.scroll-down.mo
+		position: absolute
+		right: 50%
+		left: 50%
+		bottom: 4.5em
+		transform: translateX(-50%)
+		display: none
+		@include screen(768px)
+			display: block
+		&::before
+			content: ""
+			animation: aniLine 1.8s cubic-bezier(1, 0, 0, 1) infinite
+			position: absolute
+			top: 0px
+			left: 50%
+			margin-left: -1px
+			width: 2px
+			height: 2em
+			background: #fff
+		.arrow
+			display: block
+			width: .5em
+			height: 2em
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+			&::after
+				content: ''
+				display: block
+				width: .4em
+				height: .4em
+				border-top: .1em solid #fff
+				border-right: .1em solid #fff
+				position: absolute
+				bottom: -.35em
+				left: 50%
+				transform: rotate(135deg) translate(.1em,0)
+				transform-origin: top center

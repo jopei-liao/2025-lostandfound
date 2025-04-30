@@ -12,10 +12,13 @@ const Info = () => {
 					But sorry, <span>Not responsible for safekeeping😜</span>
 				</p>
 			</div>
-			<div className="scroll-downs">
+			<div className="scroll-down pc">
 				<div className="mousey">
 					<div className="scroller"></div>
 				</div>
+			</div>
+			<div className="scroll-down mo">
+				<span className="arrow"></span>
 			</div>
 		</section>
 	);

@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./style.sass";
 
+const baseURL = import.meta.env.BASE_URL;
 gsap.registerPlugin(ScrollTrigger);
 
 const Gallery = ({ onLoaded }) => {
@@ -49,7 +50,7 @@ const Gallery = ({ onLoaded }) => {
 		};
 	}, [onLoaded]);
 
-	const imageList = Array.from({ length: 45 }, (_, i) => `/images/item-${i + 1}.jpg`);
+	const imageList = Array.from({ length: 45 }, (_, i) => `${baseURL}/images/item-${i + 1}.jpg`);
 	const chunked = [];
 	for (let i = 0; i < imageList.length; i += 5) {
 		chunked.push(imageList.slice(i, i + 5));
