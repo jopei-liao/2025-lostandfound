@@ -5,9 +5,8 @@ const Social = () => {
 	return (
 		<section className="social">
 			<div className="social-box">
-				<h2 className="title">
-					Follow <br /> on Instagram
-				</h2>
+				<h4>Follow on</h4>
+				<h3>Instagram</h3>
 				<p>Scan the QR code below ⬇️</p>
 				<div className="qrcode">
 					<img src={qrcode} alt="qrcode" />

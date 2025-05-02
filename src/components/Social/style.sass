@@ -14,25 +14,35 @@ section
 		position: relative
 		@include screen(768px)
 			padding-bottom: 10vh
-		h2.title
+		h4
+			color: #fff
+			font-size: 1.1em
+			letter-spacing: .03em
+			@include screen(768px)
+				font-size: .9em
+		h3
 			color: #fff
 			font-size: 2em
 			width: 100%
 			line-height: 1.5
 			font-weight: bold
-			letter-spacing: .01em
-			margin-bottom: 1em
+			letter-spacing: .03em
+			margin-bottom: 3em
+			@include screen(768px)
+				margin-bottom: 2.5em
+				
 			br
 				display: none
 				@include screen(768px)
 					display: block
 		p
 			color: #fff
-			font-size: 1.5em
+			font-size: 1.1em
 			line-height: 1.7
 			width: 100%
+			letter-spacing: .03em
 			@include screen(768px)
-				font-size: 1em
+				font-size: .9em
 			a
 				color: #fff
 				display: inline-block

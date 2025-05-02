@@ -13,21 +13,27 @@ section
 		position: relative
 		@include screen(768px)
 			padding-bottom: 10vh
-		h1.title
+		h2
 			color: #fff
-			font-size: 2em
-			width: 100%
-			line-height: 1.5
-			font-weight: bold
-			letter-spacing: .01em
-			margin-bottom: 1em
+			font-size: 1.1em
+			font-weight: normal
+			letter-spacing: .03em
+			@include screen(768px)
+				font-size: .9em
+		h1
+			width: 25em
+			margin: 2em 0 8em 0
+			@include screen(768px)
+				width: 80%
+				margin: 2em 0 5em 0
 		p
 			color: #fff
-			font-size: 1.5em
+			font-size: 1.1em
 			line-height: 1.7
+			letter-spacing: .03em
 			width: 100%
 			@include screen(768px)
-				font-size: 1em
+				font-size: .9em
 			span
 				text-decoration: underline
 				@include screen(768px)
