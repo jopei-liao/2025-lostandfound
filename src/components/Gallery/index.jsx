@@ -135,7 +135,7 @@ const Gallery = ({ onLoaded }) => {
 
 	const imgHandleError = (e, rowIndex, colIndex) => {
 		// 當google drive圖片載入失敗時，替換為本地圖片
-		e.target.src = `${baseURL}/images/item-${rowIndex * 5 + colIndex + 1}.jpg`;
+		e.target.src = `${baseURL}images/item-${rowIndex * 5 + colIndex + 1}.jpg`;
 	};
 
 	return (
