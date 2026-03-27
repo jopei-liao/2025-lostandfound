@@ -7,6 +7,7 @@ import Loading from "./components/Loading";
 import Info from "./components/Info";
 import Gallery from "./components/Gallery";
 import Social from "./components/Social";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +64,7 @@ function App() {
 			<Info />
 			<Gallery onLoaded={handleGalleryLoaded} />
 			<Social />
+			<Footer />
 		</div>
 	);
 }

@@ -14,7 +14,7 @@ const Info = () => {
 				<br />
 				<p>
 					But sorry, <br />
-					<span>Not responsible for safekeeping😜</span>
+					<span>Not responsible for safekeeping 😜</span>
 				</p>
 			</div>
 			<div className="scroll-down pc">
