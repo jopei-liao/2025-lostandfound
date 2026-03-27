@@ -53,7 +53,7 @@ function App() {
 			time: new Date().toLocaleString("zh-TW"),
 			timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
 		};
-		if (import.meta.env.MODE != "production" && googleSheetApiUrl) {
+		if (import.meta.env.MODE === "production" && googleSheetApiUrl) {
 			axios.get(googleSheetApiUrl, { params });
 		}
 	}, []);
