@@ -150,7 +150,7 @@ const Gallery = ({ onLoaded }) => {
 					<div className="img-box" key={rowIndex}>
 						<ul>
 							{group.map((files, colIndex) => (
-								<li className="img" key={files.id}>
+								<li className="img" key={files.id ? files.id : rowIndex * 5 + colIndex + 1}>
 									<img src={`https://www.googleapis.com/drive/v3/files/${files.id}?alt=media&key=${apiKey}`} onError={e => imgHandleError(e, rowIndex, colIndex)} alt={files.name} />
 								</li>
 							))}
