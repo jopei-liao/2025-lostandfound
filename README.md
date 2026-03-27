@@ -58,13 +58,14 @@ To maintain a clean main portfolio while managing multiple sub-projects, this re
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg).
 
 ---
 
-## 👤 Author
+## 👤 Contact
 
 **Jopei Liao**
 
-- GitHub: [@jopei-liao](https://github.com/jopei-liao)
+- GitHub: [jopei-liao](https://github.com/jopei-liao)
+- Email: [jopei.liao@gmaiol.com](jopei.liao@gmaiol.com)
 - Portfolio: [jopei-liao.github.io](https://jopei-liao.github.io/)
