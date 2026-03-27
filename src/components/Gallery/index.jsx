@@ -7,8 +7,8 @@ import axios from "axios";
 import "./style.sass";
 
 const baseURL = import.meta.env.BASE_URL;
-const apiKey = "AIzaSyDxdAD4gxDn1KC-EY5voWAnGFECheHHF-g";
-const folderId = "16C5cqqry_u25yHTJpRfYYq_iiy3Pfufx";
+const apiKey = import.meta.env.VITE_GOOGLE_DRIVE_API_KEY;
+const folderId = import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID;
 const maxItems = 45;
 
 gsap.registerPlugin(ScrollTrigger);
@@ -68,7 +68,7 @@ const Gallery = ({ onLoaded }) => {
 							scrub: 0.1,
 							start: "top center",
 						},
-					}
+					},
 				);
 			});
 
@@ -84,11 +84,16 @@ const Gallery = ({ onLoaded }) => {
 
 	const getImagesFromGoogleDrive = signal => {
 		// console.log("getImagesFromGoogleDrive");
+		if (!apiKey || !folderId) {
+			const imageList = Array.from({ length: 45 }, (_, i) => `${baseURL}/images/item-${i + 1}.jpg`);
+			setImgListArr(imageList);
+			return;
+		}
 
 		axios
 			.get(
 				`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+(mimeType='image/jpeg'+or+mimeType='image/png'+or+mimeType='image/jpg')+and+trashed=false&fields=files(id,name)&key=${apiKey}`,
-				{ signal: signal }
+				{ signal: signal },
 			)
 			.then(response => {
 				const files = response.data.files || [];

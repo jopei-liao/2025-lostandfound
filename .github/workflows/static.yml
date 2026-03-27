@@ -1,0 +1,35 @@
+name: Build and Deploy to Portfolio Subdirectory
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: "npm"
+
+            - name: Install and Build
+              run: |
+                  npm install
+                  npm run build
+
+            - name: Deploy to jopei-liao.github.io/lostandfound
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  token: ${{ secrets.DEPLOY_TOKEN }}
+                  repository-name: jopei-liao/jopei-liao.github.io
+                  branch: master
+                  folder: dist
+                  target-folder: lostandfound
+                  clean: true

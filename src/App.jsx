@@ -47,11 +47,13 @@ function App() {
 	}, []);
 
 	useEffect(() => {
+		const googleSheetApiUrl = import.meta.env.VITE_GOOGLE_SHEET_API_URL;
 		let params = {
 			time: new Date().toLocaleString("zh-TW"),
+			timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
 		};
-		if (import.meta.env.MODE === "production") {
-			axios.get("https://script.google.com/macros/s/AKfycbzgTl5YJKJjzl_dA72Hb-MaBwAe-_15NsVreoJ89Ql2Z8Ql2nVDlGsrKSBUbMNHkgH1mA/exec", { params });
+		if (import.meta.env.MODE != "production" && googleSheetApiUrl) {
+			axios.get(googleSheetApiUrl, { params });
 		}
 	}, []);
 
