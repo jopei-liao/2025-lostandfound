@@ -53,6 +53,9 @@ function App() {
 			time: new Date().toLocaleString("zh-TW"),
 			timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
 		};
+		if (!googleSheetApiUrl) {
+			console.error("Environment Variable VITE_GOOGLE_SHEET_API_URL is missing!");
+		}
 		if (import.meta.env.MODE === "production" && googleSheetApiUrl) {
 			axios.get(googleSheetApiUrl, { params });
 		}
